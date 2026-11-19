@@ -47,7 +47,7 @@ test('Кухня от колонны, включая холодильник и �
 })
 test('Коллизии учитывают вращение и допуск 1 мм',()=>{
   assert.ok(!intersects(item('laundry'),shell('column')))
-  assert.ok(intersects(item('upper13'),item('fridge')))
+  assert.ok(!intersects(item('upper13'),item('fridge')))
   assert.ok(!intersects(item('sinkCab'),shell('column')))
   assert.ok(!intersects(item('bed'),shell('west')))
   assert.ok(!intersects({...item('bed'),x:999.5},shell('west')))
@@ -95,4 +95,19 @@ test('Четыре сочетания мебели: колонна, стирал
     assert.equal(movingPanels({...cabinet,opening:100}).length,2)
     assert.deepEqual(decodeProject(encodeProject(p)),p)
   }
+})
+
+
+test('Зазоры холодильника и положение стиральной машины в базовой расстановке',()=>{
+  const fridge=item('fridge'), overhead=item('upper13'), rack=item('rack')
+  assert.equal(overhead.y-fridge.y-fridge.h,50)
+  assert.equal(overhead.y+overhead.h,item('upper7').y)
+  assert.equal(fridge.z-fridge.w/2-(rack.z+rack.w/2),50)
+  assert.equal(rack.z-rack.w/2,item('desk').z+item('desk').w/2)
+  const washer=item('washer'), cabinet=item('laundry')
+  const washerFront=washer.x-washer.d/2
+  const cabinetFront=cabinet.x-cabinet.d/2
+  // The washer model's front details extend by up to 28.5 mm.
+  assert.ok(washerFront-28.5>cabinetFront+22)
+  assert.equal(cabinet.x+cabinet.d/2-(washer.x+washer.d/2),20)
 })

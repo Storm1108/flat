@@ -1,0 +1,1538 @@
+{
+  "version": 1,
+  "params": {
+    "roomW": {
+      "label": "Ширина комнаты",
+      "value": 3670,
+      "unit": "мм",
+      "source": "Обмерный план",
+      "status": "confirmed"
+    },
+    "roomL": {
+      "label": "Длина комнаты",
+      "value": 4460,
+      "unit": "мм",
+      "source": "Обмерный план",
+      "status": "confirmed"
+    },
+    "roomH": {
+      "label": "Высота комнаты",
+      "value": 2570,
+      "unit": "мм",
+      "source": "Обмерный план",
+      "status": "confirmed"
+    },
+    "hallW": {
+      "label": "Ширина прихожей",
+      "value": 1940,
+      "unit": "мм",
+      "source": "Обмерный план",
+      "status": "confirmed"
+    },
+    "hallL": {
+      "label": "Размер прихожей вдоль стены",
+      "value": 2230,
+      "unit": "мм",
+      "source": "Обмерный план",
+      "status": "confirmed"
+    },
+    "hallH": {
+      "label": "Высота прихожей",
+      "value": 2470,
+      "unit": "мм",
+      "source": "Обмерный план",
+      "status": "confirmed"
+    },
+    "bathW": {
+      "label": "Ширина санузла",
+      "value": 1510,
+      "unit": "мм",
+      "source": "Обмерный план",
+      "status": "confirmed"
+    },
+    "bathL": {
+      "label": "Длина санузла",
+      "value": 2160,
+      "unit": "мм",
+      "source": "Обмерный план",
+      "status": "confirmed"
+    },
+    "bathH": {
+      "label": "Высота санузла",
+      "value": 2470,
+      "unit": "мм",
+      "source": "Обмерный план",
+      "status": "unknown"
+    },
+    "totalArea": {
+      "label": "Общая площадь по обмеру",
+      "value": 23.5,
+      "unit": "м²",
+      "source": "Обмерный план",
+      "status": "confirmed"
+    },
+    "roomArea": {
+      "label": "Комната по обмеру",
+      "value": 16.4,
+      "unit": "м²",
+      "source": "Обмерный план",
+      "status": "confirmed"
+    },
+    "hallArea": {
+      "label": "Прихожая по обмеру",
+      "value": 4.1,
+      "unit": "м²",
+      "source": "Обмерный план",
+      "status": "confirmed"
+    },
+    "bathArea": {
+      "label": "Санузел по обмеру",
+      "value": 3,
+      "unit": "м²",
+      "source": "Обмерный план",
+      "status": "confirmed"
+    },
+    "columnX": {
+      "label": "Колонна поперёк прихожей",
+      "value": 590,
+      "unit": "мм",
+      "source": "Авторский план",
+      "status": "confirmed"
+    },
+    "columnZ": {
+      "label": "Колонна вдоль прихожей",
+      "value": 400,
+      "unit": "мм",
+      "source": "Авторский план",
+      "status": "confirmed"
+    },
+    "pierX": {
+      "label": "Выступ санузла поперёк",
+      "value": 250,
+      "unit": "мм",
+      "source": "Авторский план",
+      "status": "confirmed"
+    },
+    "pierZ": {
+      "label": "Выступ санузла вдоль",
+      "value": 1170,
+      "unit": "мм",
+      "source": "Авторский план",
+      "status": "confirmed"
+    },
+    "passage": {
+      "label": "Проём из прихожей",
+      "value": 1350,
+      "unit": "мм",
+      "source": "Авторский план",
+      "status": "confirmed"
+    },
+    "wallT": {
+      "label": "Толщина наружных стен",
+      "value": 180,
+      "unit": "мм",
+      "source": "Авторский план",
+      "status": "unknown"
+    },
+    "beamH": {
+      "label": "Низ балки над проёмом",
+      "value": 2210,
+      "unit": "мм",
+      "source": "Фото из прихожей",
+      "status": "unknown"
+    },
+    "beamD": {
+      "label": "Глубина балки",
+      "value": 180,
+      "unit": "мм",
+      "source": "Фото из прихожей",
+      "status": "unknown"
+    },
+    "windowW": {
+      "label": "Ширина окна",
+      "value": 2270,
+      "unit": "мм",
+      "source": "Авторский план",
+      "status": "confirmed"
+    },
+    "windowX": {
+      "label": "Левый отступ окна",
+      "value": 700,
+      "unit": "мм",
+      "source": "Авторский план",
+      "status": "confirmed"
+    },
+    "windowSill": {
+      "label": "Высота подоконника",
+      "value": 540,
+      "unit": "мм",
+      "source": "Фото окна",
+      "status": "unknown"
+    },
+    "windowH": {
+      "label": "Высота окна",
+      "value": 1690,
+      "unit": "мм",
+      "source": "Фото окна",
+      "status": "unknown"
+    },
+    "windowSplit": {
+      "label": "Ширина левой створки",
+      "value": 565,
+      "unit": "мм",
+      "source": "Фото окна",
+      "status": "provisional"
+    },
+    "radiatorW": {
+      "label": "Ширина радиатора",
+      "value": 1870,
+      "unit": "мм",
+      "source": "План мебели",
+      "status": "provisional"
+    },
+    "radiatorH": {
+      "label": "Высота радиатора",
+      "value": 310,
+      "unit": "мм",
+      "source": "Фото окна",
+      "status": "unknown"
+    },
+    "radiatorD": {
+      "label": "Глубина радиатора",
+      "value": 180,
+      "unit": "мм",
+      "source": "Фото окна",
+      "status": "unknown"
+    },
+    "radiatorX": {
+      "label": "Начало радиатора по X",
+      "value": 900,
+      "unit": "мм",
+      "source": "План мебели",
+      "status": "provisional"
+    },
+    "entryW": {
+      "label": "Ширина входного проёма",
+      "value": 900,
+      "unit": "мм",
+      "source": "Рабочая геометрия",
+      "status": "unknown"
+    },
+    "entryX": {
+      "label": "Отступ входного проёма от левой грани прихожей",
+      "value": 130,
+      "unit": "мм",
+      "source": "Рабочая геометрия",
+      "status": "unknown"
+    },
+    "entryH": {
+      "label": "Высота входного проёма",
+      "value": 2070,
+      "unit": "мм",
+      "source": "Рабочая геометрия",
+      "status": "unknown"
+    },
+    "bathDoorW": {
+      "label": "Ширина проёма санузла",
+      "value": 700,
+      "unit": "мм",
+      "source": "Фото из прихожей",
+      "status": "unknown"
+    },
+    "bathDoorZ": {
+      "label": "Отступ проёма санузла вдоль прихожей",
+      "value": 1100,
+      "unit": "мм",
+      "source": "Фото из прихожей",
+      "status": "unknown"
+    },
+    "bathDoorH": {
+      "label": "Высота проёма санузла",
+      "value": 2040,
+      "unit": "мм",
+      "source": "Фото из прихожей",
+      "status": "unknown"
+    },
+    "kitchen_total_length": {
+      "label": "Длина кухни с холодильником",
+      "value": 2620,
+      "unit": "мм",
+      "source": "Лемана ПРО, листы 4–5",
+      "status": "confirmed"
+    },
+    "ventY": {
+      "label": "Низ вентиляционной решётки",
+      "value": 2200,
+      "unit": "мм",
+      "source": "Техническое задание",
+      "status": "confirmed"
+    },
+    "ventOffset": {
+      "label": "Отступ решётки от правой стены",
+      "value": 230,
+      "unit": "мм",
+      "source": "Техническое задание",
+      "status": "confirmed"
+    },
+    "ventW": {
+      "label": "Ширина вентиляционной решётки",
+      "value": 150,
+      "unit": "мм",
+      "source": "Фото кухни",
+      "status": "unknown"
+    },
+    "ventH": {
+      "label": "Высота вентиляционной решётки",
+      "value": 150,
+      "unit": "мм",
+      "source": "Фото кухни",
+      "status": "unknown"
+    },
+    "ductD": {
+      "label": "Диаметр воздуховода",
+      "value": 120,
+      "unit": "мм",
+      "source": "Weissgauff TEL 450 Inox",
+      "status": "confirmed"
+    },
+    "fridgeOpenDepth": {
+      "label": "Глубина холодильника при открытии на 90°",
+      "value": 1220,
+      "unit": "мм",
+      "source": "Техническое задание",
+      "status": "provisional"
+    },
+    "hobCutW": {
+      "label": "Ширина выреза под варочную панель",
+      "value": null,
+      "unit": "мм",
+      "source": "Артикул 92384258, монтажная схема недоступна",
+      "status": "unknown"
+    },
+    "hobCutD": {
+      "label": "Глубина выреза под варочную панель",
+      "value": null,
+      "unit": "мм",
+      "source": "Артикул 92384258, монтажная схема недоступна",
+      "status": "unknown"
+    },
+    "microCutW": {
+      "label": "Ширина ниши СВЧ",
+      "value": 432,
+      "unit": "мм",
+      "source": "ТЗ и карточка Entero, вариант для навесного шкафа не подтверждён",
+      "status": "provisional"
+    },
+    "microCutH": {
+      "label": "Высота ниши СВЧ",
+      "value": 282,
+      "unit": "мм",
+      "source": "ТЗ и карточка Entero, вариант для навесного шкафа не подтверждён",
+      "status": "provisional"
+    },
+    "microCutD": {
+      "label": "Глубина ниши СВЧ",
+      "value": 450,
+      "unit": "мм",
+      "source": "ТЗ и карточка Entero, вариант для навесного шкафа не подтверждён",
+      "status": "provisional"
+    },
+    "ovenCutW": {
+      "label": "Ширина ниши духовки",
+      "value": 420,
+      "unit": "мм",
+      "source": "Инструкция MAUNFELD EOEC516B2",
+      "status": "confirmed"
+    },
+    "ovenCutH": {
+      "label": "Высота ниши духовки",
+      "value": 600,
+      "unit": "мм",
+      "source": "Инструкция MAUNFELD EOEC516B2",
+      "status": "confirmed"
+    },
+    "ovenCutD": {
+      "label": "Глубина ниши духовки",
+      "value": 545,
+      "unit": "мм",
+      "source": "Инструкция MAUNFELD EOEC516B2",
+      "status": "confirmed"
+    },
+    "hoodCutW": {
+      "label": "Ширина выреза под вытяжку",
+      "value": null,
+      "unit": "мм",
+      "source": "Монтажная схема Weissgauff TEL 450 Inox",
+      "status": "unknown"
+    },
+    "hoodCutD": {
+      "label": "Глубина выреза под вытяжку",
+      "value": null,
+      "unit": "мм",
+      "source": "Монтажная схема Weissgauff TEL 450 Inox",
+      "status": "unknown"
+    }
+  },
+  "items": [
+    {
+      "id": "bed",
+      "label": "Кровать 140 × 200",
+      "kind": "bed",
+      "room": "room",
+      "x": 1000,
+      "y": 0,
+      "z": 1050,
+      "w": 1400,
+      "h": 860,
+      "d": 2000,
+      "rot": 90,
+      "material": "fabric",
+      "status": "provisional",
+      "source": "Авторский план",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "wardrobe",
+      "label": "Шкаф в комнате",
+      "kind": "wardrobe",
+      "room": "room",
+      "x": 250,
+      "y": 0,
+      "z": 2260,
+      "w": 1000,
+      "h": 1900,
+      "d": 500,
+      "rot": 90,
+      "material": "white",
+      "status": "provisional",
+      "source": "Авторский план",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "sofa",
+      "label": "Диван",
+      "kind": "sofa",
+      "room": "room",
+      "x": 400,
+      "y": 0,
+      "z": 3380,
+      "w": 1200,
+      "h": 810,
+      "d": 800,
+      "rot": 90,
+      "material": "fabric",
+      "status": "provisional",
+      "source": "Авторский план",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "table",
+      "label": "Овальный стол",
+      "kind": "oval",
+      "room": "room",
+      "x": 1160,
+      "y": 0,
+      "z": 3370,
+      "w": 600,
+      "h": 740,
+      "d": 1000,
+      "rot": 0,
+      "material": "wood",
+      "status": "provisional",
+      "source": "Авторский план",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "chair1",
+      "label": "Стул 1",
+      "kind": "chair",
+      "room": "room",
+      "x": 1720,
+      "y": 0,
+      "z": 3135,
+      "w": 445,
+      "h": 805,
+      "d": 460,
+      "rot": -90,
+      "material": "fabric",
+      "status": "provisional",
+      "source": "Авторский план",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "chair2",
+      "label": "Стул 2",
+      "kind": "chair",
+      "room": "room",
+      "x": 1720,
+      "y": 0,
+      "z": 3610,
+      "w": 445,
+      "h": 805,
+      "d": 460,
+      "rot": -90,
+      "material": "fabric",
+      "status": "provisional",
+      "source": "Авторский план",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "desk",
+      "label": "Письменный стол",
+      "kind": "desk",
+      "room": "room",
+      "x": 3370,
+      "y": 0,
+      "z": 960,
+      "w": 1200,
+      "h": 750,
+      "d": 600,
+      "rot": -90,
+      "material": "white",
+      "status": "provisional",
+      "source": "Авторский план",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "rack",
+      "label": "Пенал закрытый Hoff «Хелен»",
+      "kind": "closedRack",
+      "room": "room",
+      "x": 3300,
+      "y": 0,
+      "z": 1760,
+      "w": 400,
+      "h": 2100,
+      "d": 460,
+      "rot": -90,
+      "material": "white",
+      "status": "confirmed",
+      "source": "Карточка Hoff, арт. 80597645; расположение по заданию",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "deskchair",
+      "label": "Рабочее кресло",
+      "kind": "chair",
+      "room": "room",
+      "x": 2610,
+      "y": 0,
+      "z": 1010,
+      "w": 480,
+      "h": 875,
+      "d": 480,
+      "rot": 90,
+      "material": "fabric",
+      "status": "provisional",
+      "source": "Авторский план",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "hallwardrobe",
+      "label": "Hoff «Кежуал» · 80 см",
+      "kind": "wardrobe",
+      "room": "hall",
+      "x": 3415.5,
+      "y": 0,
+      "z": 5911,
+      "w": 802,
+      "h": 2216,
+      "d": 509,
+      "rot": -90,
+      "material": "white",
+      "status": "confirmed",
+      "source": "Карточка Hoff, арт. 80816546",
+      "visible": true,
+      "opening": 0,
+      "doors": 2
+    },
+    {
+      "id": "laundry",
+      "label": "Низкий шкаф под стиральную машину · 65 см",
+      "kind": "laundry",
+      "room": "hall",
+      "x": 3411,
+      "y": 0,
+      "z": 5185,
+      "w": 650,
+      "h": 900,
+      "d": 500,
+      "rot": -90,
+      "material": "white",
+      "status": "provisional",
+      "source": "Ширина 650 мм и глубина 500 мм по заданию. Высота из исходной модели.",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "washer",
+      "label": "Фронтальная стиральная машина",
+      "kind": "washer",
+      "room": "hall",
+      "x": 3373.5,
+      "y": 0,
+      "z": 5185,
+      "w": 595,
+      "h": 850,
+      "d": 535,
+      "rot": -90,
+      "material": "white",
+      "status": "unknown",
+      "source": "Модель не выбрана",
+      "visible": true,
+      "opening": 0,
+      "parent": "laundry"
+    },
+    {
+      "id": "sinkCab",
+      "label": "Модуль мойки №1",
+      "kind": "cabinet",
+      "room": "room",
+      "x": 3390,
+      "y": 100,
+      "z": 4160,
+      "w": 600,
+      "h": 768,
+      "d": 560,
+      "rot": -90,
+      "material": "white",
+      "status": "confirmed",
+      "source": "Лемана ПРО, листы 4–5",
+      "visible": true,
+      "opening": 0,
+      "kitchen": true
+    },
+    {
+      "id": "dishCab",
+      "label": "Ниша ПММ №4",
+      "kind": "cabinet",
+      "room": "room",
+      "x": 3390,
+      "y": 100,
+      "z": 3635,
+      "w": 450,
+      "h": 768,
+      "d": 560,
+      "rot": -90,
+      "material": "white",
+      "status": "confirmed",
+      "source": "Лемана ПРО, листы 4–5",
+      "visible": true,
+      "opening": 0,
+      "kitchen": true
+    },
+    {
+      "id": "ovenCab",
+      "label": "Модуль духовки №3",
+      "kind": "ovenCab",
+      "room": "room",
+      "x": 3390,
+      "y": 100,
+      "z": 3185,
+      "w": 450,
+      "h": 768,
+      "d": 560,
+      "rot": -90,
+      "material": "white",
+      "status": "confirmed",
+      "source": "Лемана ПРО, листы 4–5",
+      "visible": true,
+      "opening": 0,
+      "kitchen": true
+    },
+    {
+      "id": "drawers",
+      "label": "Ящики №2",
+      "kind": "drawers",
+      "room": "room",
+      "x": 3390,
+      "y": 100,
+      "z": 2760,
+      "w": 400,
+      "h": 768,
+      "d": 560,
+      "rot": -90,
+      "material": "white",
+      "status": "confirmed",
+      "source": "Лемана ПРО, листы 4–5",
+      "visible": true,
+      "opening": 0,
+      "kitchen": true
+    },
+    {
+      "id": "fridge",
+      "label": "Haier C4F620CWMPU1",
+      "kind": "fridge",
+      "room": "room",
+      "x": 3332.5,
+      "y": 0,
+      "z": 2260,
+      "w": 595,
+      "h": 2000,
+      "d": 675,
+      "rot": -90,
+      "material": "white",
+      "status": "confirmed",
+      "source": "Инструкция Haier C4F620*",
+      "visible": true,
+      "opening": 0,
+      "kitchen": true,
+      "hinge": -1
+    },
+    {
+      "id": "counter",
+      "label": "Столешница 1900 мм",
+      "kind": "counter",
+      "room": "room",
+      "x": 3370,
+      "y": 868,
+      "z": 3510,
+      "w": 1900,
+      "h": 38,
+      "d": 600,
+      "rot": -90,
+      "material": "wood",
+      "status": "provisional",
+      "source": "Лемана ПРО, листы 4–5",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "plinth",
+      "label": "Цоколь кухни",
+      "kind": "plinth",
+      "room": "room",
+      "x": 3412.5,
+      "y": 0,
+      "z": 3510,
+      "w": 1900,
+      "h": 100,
+      "d": 515,
+      "rot": -90,
+      "material": "white",
+      "status": "confirmed",
+      "source": "Лемана ПРО, листы 4–5",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "backsplash",
+      "label": "Кухонный фартук",
+      "kind": "backsplash",
+      "room": "room",
+      "x": 3662,
+      "y": 906,
+      "z": 3510,
+      "w": 1900,
+      "h": 600,
+      "d": 16,
+      "rot": -90,
+      "material": "wood",
+      "status": "provisional",
+      "source": "Лемана ПРО, листы 4–5",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "upper12",
+      "label": "Верхний шкаф №12",
+      "kind": "upper",
+      "room": "room",
+      "x": 3495,
+      "y": 1506,
+      "z": 4160,
+      "w": 600,
+      "h": 768,
+      "d": 350,
+      "rot": -90,
+      "material": "white",
+      "status": "confirmed",
+      "source": "Лемана ПРО, листы 4–5",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "upper11",
+      "label": "Верхний шкаф №11",
+      "kind": "upper",
+      "room": "room",
+      "x": 3495,
+      "y": 1506,
+      "z": 3635,
+      "w": 450,
+      "h": 768,
+      "d": 350,
+      "rot": -90,
+      "material": "white",
+      "status": "confirmed",
+      "source": "Лемана ПРО, листы 4–5",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "upper10",
+      "label": "Верхний шкаф №10",
+      "kind": "upper",
+      "room": "room",
+      "x": 3495,
+      "y": 1506,
+      "z": 3185,
+      "w": 450,
+      "h": 768,
+      "d": 350,
+      "rot": -90,
+      "material": "white",
+      "status": "confirmed",
+      "source": "Лемана ПРО, листы 4–5",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "upper8",
+      "label": "Верхний шкаф №8",
+      "kind": "upper",
+      "room": "room",
+      "x": 3495,
+      "y": 1506,
+      "z": 2760,
+      "w": 400,
+      "h": 768,
+      "d": 350,
+      "rot": -90,
+      "material": "white",
+      "status": "confirmed",
+      "source": "Лемана ПРО, листы 4–5",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "upper6",
+      "label": "Верхний шкаф №6",
+      "kind": "upper",
+      "room": "room",
+      "x": 3390,
+      "y": 2274,
+      "z": 4160,
+      "w": 600,
+      "h": 256,
+      "d": 560,
+      "rot": -90,
+      "material": "white",
+      "status": "provisional",
+      "source": "Лемана ПРО, листы 4–5",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "upper5",
+      "label": "Верхний шкаф №5",
+      "kind": "upper",
+      "room": "room",
+      "x": 3390,
+      "y": 2274,
+      "z": 3510,
+      "w": 700,
+      "h": 256,
+      "d": 560,
+      "rot": -90,
+      "material": "white",
+      "status": "provisional",
+      "source": "Лемана ПРО, листы 4–5",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "upper9",
+      "label": "Верхний шкаф №9",
+      "kind": "upper",
+      "room": "room",
+      "x": 3390,
+      "y": 2274,
+      "z": 2860,
+      "w": 600,
+      "h": 256,
+      "d": 560,
+      "rot": -90,
+      "material": "white",
+      "status": "provisional",
+      "source": "Лемана ПРО, листы 4–5",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "upper7",
+      "label": "Верхний шкаф №7",
+      "kind": "upper",
+      "room": "room",
+      "x": 3390,
+      "y": 2274,
+      "z": 2260,
+      "w": 600,
+      "h": 256,
+      "d": 560,
+      "rot": -90,
+      "material": "white",
+      "status": "provisional",
+      "source": "Лемана ПРО, листы 4–5",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "upper13",
+      "label": "Верхний шкаф №13",
+      "kind": "upper",
+      "room": "room",
+      "x": 3390,
+      "y": 1890,
+      "z": 2260,
+      "w": 600,
+      "h": 384,
+      "d": 560,
+      "rot": -90,
+      "material": "white",
+      "status": "provisional",
+      "source": "Лемана ПРО, листы 4–5",
+      "visible": true,
+      "opening": 0
+    },
+    {
+      "id": "oven",
+      "label": "Maunfeld EOEC516B2",
+      "kind": "oven",
+      "room": "room",
+      "x": 3365,
+      "y": 271,
+      "z": 3185,
+      "w": 448,
+      "h": 595,
+      "d": 550,
+      "rot": -90,
+      "material": "black",
+      "status": "confirmed",
+      "source": "Карточка MAUNFELD EOEC516B2",
+      "visible": true,
+      "opening": 0,
+      "parent": "ovenCab"
+    },
+    {
+      "id": "hob",
+      "label": "Weissgauff 32 BKS · 92384258",
+      "kind": "hob",
+      "room": "room",
+      "x": 3370,
+      "y": 865,
+      "z": 3185,
+      "w": 288,
+      "h": 48,
+      "d": 520,
+      "rot": -90,
+      "material": "black",
+      "status": "provisional",
+      "source": "ТЗ, корпус предварительный",
+      "visible": true,
+      "opening": 0,
+      "parent": "counter"
+    },
+    {
+      "id": "hood",
+      "label": "Weissgauff TEL 450 Inox",
+      "kind": "hood",
+      "room": "room",
+      "x": 3457.5,
+      "y": 1506,
+      "z": 3185,
+      "w": 450,
+      "h": 175,
+      "d": 305,
+      "rot": -90,
+      "material": "metal",
+      "status": "confirmed",
+      "source": "Карточка Weissgauff TEL 450 Inox",
+      "visible": true,
+      "opening": 0,
+      "parent": "upper10"
+    },
+    {
+      "id": "micro",
+      "label": "Monsher MMH 1015 Noir",
+      "kind": "micro",
+      "room": "room",
+      "x": 3458.5,
+      "y": 1506,
+      "z": 3635,
+      "w": 450,
+      "h": 300,
+      "d": 315,
+      "rot": -90,
+      "material": "black",
+      "status": "confirmed",
+      "source": "Карточка Monsher MMH 1015 Noir",
+      "visible": true,
+      "opening": 0,
+      "parent": "upper11"
+    },
+    {
+      "id": "sink",
+      "label": "Мойка и смеситель",
+      "kind": "sink",
+      "room": "room",
+      "x": 3380,
+      "y": 865,
+      "z": 4160,
+      "w": 435,
+      "h": 170,
+      "d": 460,
+      "rot": -90,
+      "material": "metal",
+      "status": "unknown",
+      "source": "Модель не выбрана",
+      "visible": true,
+      "opening": 0,
+      "parent": "counter"
+    }
+  ],
+  "kitchen": [
+    {
+      "id": "sinkCab",
+      "w": 600
+    },
+    {
+      "id": "dishCab",
+      "w": 450
+    },
+    {
+      "id": "ovenCab",
+      "w": 450
+    },
+    {
+      "id": "drawers",
+      "w": 400
+    },
+    {
+      "id": "fridge",
+      "w": 600
+    },
+    {
+      "id": "end-gap",
+      "w": 120
+    }
+  ],
+  "duct": [
+    [
+      3540,
+      1681,
+      3185
+    ],
+    [
+      3540,
+      2310,
+      3185
+    ],
+    [
+      3440,
+      2310,
+      3185
+    ],
+    [
+      3440,
+      2310,
+      4420
+    ]
+  ],
+  "materials": {
+    "wall": "#ede9e0",
+    "floor": "#b5a593",
+    "ceiling": "#f7f3ed",
+    "wood": "#bb9168",
+    "white": "#f3eee6",
+    "black": "#232629",
+    "metal": "#aab3b6",
+    "fabric": "#9da8a4",
+    "tile": "#b8bab2"
+  },
+  "settings": {
+    "light": "day",
+    "quality": false,
+    "exposure": 1
+  },
+  "name": "Исходная расстановка",
+  "geometry": {
+    "floors": [
+      {
+        "x": 1835,
+        "z": 2230,
+        "w": 3670,
+        "d": 4460,
+        "id": "room",
+        "label": "Кухня-гостиная",
+        "h": 2570
+      },
+      {
+        "x": 2700,
+        "z": 5575,
+        "w": 1940,
+        "d": 2230,
+        "id": "hall",
+        "label": "Прихожая",
+        "h": 2470
+      },
+      {
+        "x": 755,
+        "z": 5610,
+        "w": 1510,
+        "d": 2160,
+        "id": "bath",
+        "label": "Санузел",
+        "h": 2470
+      }
+    ],
+    "walls": [
+      {
+        "x": 260,
+        "z": -90,
+        "w": 880,
+        "d": 180,
+        "id": "north-left",
+        "label": "Простенок окна слева",
+        "y": 0,
+        "h": 2570,
+        "rot": 0,
+        "material": "wall",
+        "wall": "north"
+      },
+      {
+        "x": 3410,
+        "z": -90,
+        "w": 880,
+        "d": 180,
+        "id": "north-right",
+        "label": "Простенок окна справа",
+        "y": 0,
+        "h": 2570,
+        "rot": 0,
+        "material": "wall",
+        "wall": "north"
+      },
+      {
+        "x": 1835,
+        "z": -90,
+        "w": 2270,
+        "d": 180,
+        "id": "north-sill",
+        "label": "Стена под окном",
+        "y": 0,
+        "h": 540,
+        "rot": 0,
+        "material": "wall",
+        "wall": "north"
+      },
+      {
+        "x": 1835,
+        "z": -90,
+        "w": 2270,
+        "d": 180,
+        "id": "north-lintel",
+        "label": "Стена над окном",
+        "y": 2230,
+        "h": 340,
+        "rot": 0,
+        "material": "wall",
+        "wall": "north"
+      },
+      {
+        "x": -90,
+        "z": 3345,
+        "w": 180,
+        "d": 6690,
+        "id": "west",
+        "label": "Левая наружная стена",
+        "y": 0,
+        "h": 2570,
+        "rot": 0,
+        "material": "wall",
+        "wall": "west"
+      },
+      {
+        "x": 3760,
+        "z": 2230,
+        "w": 180,
+        "d": 4460,
+        "id": "east-room",
+        "label": "Правая стена комнаты",
+        "y": 0,
+        "h": 2570,
+        "rot": 0,
+        "material": "wall",
+        "wall": "east"
+      },
+      {
+        "x": 3760,
+        "z": 5575,
+        "w": 180,
+        "d": 2230,
+        "id": "east-hall",
+        "label": "Правая стена прихожей",
+        "y": 0,
+        "h": 2470,
+        "rot": 0,
+        "material": "wall",
+        "wall": "east"
+      },
+      {
+        "x": 865,
+        "z": 4495,
+        "w": 1730,
+        "d": 70,
+        "id": "bath-north",
+        "label": "Перегородка комнаты и санузла",
+        "y": 0,
+        "h": 2470,
+        "rot": 0,
+        "material": "wall",
+        "wall": "inner"
+      },
+      {
+        "x": 775,
+        "z": 6780,
+        "w": 1910,
+        "d": 180,
+        "id": "bath-back",
+        "label": "Торец санузла",
+        "y": 0,
+        "h": 2470,
+        "rot": 0,
+        "material": "wall",
+        "wall": "south"
+      },
+      {
+        "x": 1795,
+        "z": 6780,
+        "w": 130,
+        "d": 180,
+        "id": "entry-left",
+        "label": "Входной простенок слева",
+        "y": 0,
+        "h": 2470,
+        "rot": 0,
+        "material": "wall",
+        "wall": "south"
+      },
+      {
+        "x": 3305,
+        "z": 6780,
+        "w": 1090,
+        "d": 180,
+        "id": "entry-right",
+        "label": "Входной простенок справа",
+        "y": 0,
+        "h": 2470,
+        "rot": 0,
+        "material": "wall",
+        "wall": "south"
+      },
+      {
+        "x": 2310,
+        "z": 6780,
+        "w": 900,
+        "d": 180,
+        "id": "entry-lintel",
+        "label": "Стена над входом",
+        "y": 2070,
+        "h": 400,
+        "rot": 0,
+        "material": "wall",
+        "wall": "south"
+      },
+      {
+        "x": 1620,
+        "z": 5045,
+        "w": 220,
+        "d": 1030,
+        "id": "bath-wall-a",
+        "label": "Перегородка санузла",
+        "y": 0,
+        "h": 2470,
+        "rot": 0,
+        "material": "wall",
+        "wall": "inner"
+      },
+      {
+        "x": 1620,
+        "z": 6475,
+        "w": 220,
+        "d": 430,
+        "id": "bath-wall-b",
+        "label": "Перегородка санузла",
+        "y": 0,
+        "h": 2470,
+        "rot": 0,
+        "material": "wall",
+        "wall": "inner"
+      },
+      {
+        "x": 1620,
+        "z": 5910,
+        "w": 220,
+        "d": 700,
+        "id": "bath-lintel",
+        "label": "Стена над дверью санузла",
+        "y": 2040,
+        "h": 430,
+        "rot": 0,
+        "material": "wall",
+        "wall": "inner"
+      }
+    ],
+    "fixed": [
+      {
+        "x": 3375,
+        "z": 4660,
+        "w": 590,
+        "d": 400,
+        "id": "column",
+        "label": "Конструктивная колонна",
+        "y": 0,
+        "h": 2470,
+        "rot": 0,
+        "material": "wall"
+      },
+      {
+        "x": 125,
+        "z": 6105,
+        "w": 250,
+        "d": 1170,
+        "id": "pier",
+        "label": "Выступ в санузле",
+        "y": 0,
+        "h": 2470,
+        "rot": 0,
+        "material": "wall"
+      },
+      {
+        "x": 2405,
+        "z": 4550,
+        "w": 1350,
+        "d": 180,
+        "id": "beam",
+        "label": "Балка над проходом",
+        "y": 2210,
+        "h": 360,
+        "rot": 0,
+        "material": "wall"
+      },
+      {
+        "x": 3375,
+        "z": 4550,
+        "w": 590,
+        "d": 180,
+        "id": "drop",
+        "label": "Перепад потолка",
+        "y": 2470,
+        "h": 100,
+        "rot": 0,
+        "material": "wall"
+      },
+      {
+        "x": 1835,
+        "z": 135,
+        "w": 1870,
+        "d": 180,
+        "id": "radiator",
+        "label": "Радиатор",
+        "y": 40,
+        "h": 310,
+        "rot": 0,
+        "material": "white"
+      },
+      {
+        "x": 1835,
+        "z": -40,
+        "w": 2314,
+        "d": 280,
+        "id": "sill",
+        "label": "Подоконник",
+        "y": 516,
+        "h": 24,
+        "rot": 0,
+        "material": "white"
+      },
+      {
+        "x": 3440,
+        "z": 4452,
+        "w": 150,
+        "d": 16,
+        "id": "vent",
+        "label": "Вентиляционная решётка",
+        "y": 2200,
+        "h": 150,
+        "rot": 0,
+        "material": "white"
+      }
+    ],
+    "openings": [
+      {
+        "x": 1835,
+        "z": -90,
+        "w": 2270,
+        "d": 180,
+        "id": "window",
+        "label": "Окно",
+        "y": 540,
+        "h": 1690,
+        "rot": 0,
+        "material": "wall"
+      },
+      {
+        "x": 2310,
+        "z": 6780,
+        "w": 900,
+        "d": 180,
+        "id": "entry",
+        "label": "Входная дверь",
+        "y": 0,
+        "h": 2070,
+        "rot": 0,
+        "material": "wall"
+      },
+      {
+        "x": 1620,
+        "z": 5910,
+        "w": 220,
+        "d": 700,
+        "id": "bathDoor",
+        "label": "Дверь санузла",
+        "y": 0,
+        "h": 2040,
+        "rot": 0,
+        "material": "wall"
+      }
+    ],
+    "passages": [
+      {
+        "x": 2405,
+        "z": 4660,
+        "w": 1350,
+        "d": 400,
+        "id": "hall-pass",
+        "label": "Проход между колонной и перегородкой",
+        "y": 0,
+        "h": 2210,
+        "rot": 0,
+        "material": "wall"
+      },
+      {
+        "x": 2310,
+        "z": 6240,
+        "w": 900,
+        "d": 900,
+        "id": "entry-clear",
+        "label": "Подход к входной двери",
+        "y": 0,
+        "h": 2070,
+        "rot": 0,
+        "material": "wall"
+      },
+      {
+        "x": 2080,
+        "z": 5910,
+        "w": 700,
+        "d": 700,
+        "id": "bath-clear",
+        "label": "Подход к двери санузла",
+        "y": 0,
+        "h": 2040,
+        "rot": 0,
+        "material": "wall"
+      },
+      {
+        "x": 1160,
+        "z": 5910,
+        "w": 700,
+        "d": 700,
+        "id": "bath-swing",
+        "label": "Сектор распахивания двери санузла · внутрь",
+        "y": 0,
+        "h": 2040,
+        "rot": 0,
+        "material": "wall"
+      }
+    ],
+    "contours": {
+      "room": [
+        [
+          0,
+          0
+        ],
+        [
+          3670,
+          0
+        ],
+        [
+          3670,
+          4460
+        ],
+        [
+          0,
+          4460
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "hall": [
+        [
+          1730,
+          4460
+        ],
+        [
+          3670,
+          4460
+        ],
+        [
+          3670,
+          6690
+        ],
+        [
+          1730,
+          6690
+        ],
+        [
+          1730,
+          4460
+        ]
+      ],
+      "bath": [
+        [
+          0,
+          4530
+        ],
+        [
+          1510,
+          4530
+        ],
+        [
+          1510,
+          6690
+        ],
+        [
+          0,
+          6690
+        ],
+        [
+          0,
+          4530
+        ]
+      ]
+    }
+  }
+}

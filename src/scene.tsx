@@ -6,10 +6,10 @@ import {Box,ObjectModel} from './models'
 import {activeItems} from './store'
 import {geometry, intersects, mVec, meters, movingPanels, v, within,type Project,type Solid,type Vec} from './model'
 
-export type WalkAction='forward'|'back'|'left'|'right'|'turnLeft'|'turnRight'
+export type WalkVector={right:number;forward:number}
 export type CameraMode='plan'|'orbit'|'walk'
 export type Display={walls:string[];ceiling:boolean;cutaway:boolean;duct:boolean;dimensions:boolean;collision:boolean;eye:number}
-type SceneProps={walkActions:{current:WalkAction[]};p:Project;mode:'orbit'|'walk';view:Display;selected:string|null;measure:boolean;points:Vec[];setPoint:(v:Vec)=>void;select:(id:string|null)=>void;canvas:(v:HTMLCanvasElement)=>void}
+type SceneProps={walkInput:{current:WalkVector};p:Project;mode:'orbit'|'walk';view:Display;selected:string|null;measure:boolean;points:Vec[];setPoint:(v:Vec)=>void;select:(id:string|null)=>void;canvas:(v:HTMLCanvasElement)=>void}
 const scenePoint=(pt:Vector3):Vec=>[Math.round(pt.x*1000),Math.round(pt.y*1000),Math.round(pt.z*1000)]
 const asset=(name:string)=>import.meta.env.BASE_URL+name
 const staticShadows={type:PCFShadowMap,autoUpdate:false}
@@ -62,10 +62,8 @@ function CylinderBetween({a,b,d,metal}:{a:Vec;b:Vec;d:number;metal:string}){
   return <mesh position={start.add(end).multiplyScalar(.5)} quaternion={rotation} castShadow><cylinderGeometry args={[meters(d/2),meters(d/2),axis.length(),20]}/><meshStandardMaterial color={metal} roughness={.35} metalness={.35}/></mesh>
 }
 
-function Walk({p,view,walkActions}:{p:Project;view:Display;walkActions:SceneProps['walkActions']}){
+function Walk({p,view,walkInput}:{p:Project;view:Display;walkInput:SceneProps['walkInput']}){
   const {camera,gl}=useThree(), keys=useRef(new Set<string>()), rotation=useRef(new Euler(0,0,0,'YXZ'))
-  const stepLeft=useRef(0)
-  const stepDirection=useRef(new Vector3())
   const layout=useMemo(()=>geometry(p),[p])
   const obstacles=useMemo(()=>[...layout.shell,...(view.collision?activeItems(p).flatMap(o=>o.parent?[]:[o,...(o.opening?movingPanels(o):[])]):[])],[layout,p,view.collision])
   useEffect(()=>{
@@ -128,34 +126,12 @@ function Walk({p,view,walkActions}:{p:Project;view:Display;walkActions:SceneProp
     camera.position.y=meters(view.eye)
     const angle=rotation.current.y
     const held=(a:string,b:string)=>Number(keys.current.has(a)||keys.current.has(b))
-    let right=held('KeyD','ArrowRight')-held('KeyA','ArrowLeft')
-    let forward=held('KeyW','ArrowUp')-held('KeyS','ArrowDown')
-    if(stepLeft.current<=0){
-      const action=walkActions.current.shift()
-      if(action==='turnLeft'||action==='turnRight'){
-        rotation.current.y+=(action==='turnLeft'?1:-1)*Math.PI/6
-        camera.rotation.copy(rotation.current)
-        return
-      }
-      if(action){
-        right=Number(action==='right')-Number(action==='left')
-        forward=Number(action==='forward')-Number(action==='back')
-        stepDirection.current.set(right*Math.cos(angle)-forward*Math.sin(angle),0,-right*Math.sin(angle)-forward*Math.cos(angle))
-        stepLeft.current=.35
-      }
-    }
-    let dx=0,dz=0
-    const time=Math.min(dt,.034)
-    if(stepLeft.current>0){
-      const step=Math.min(stepLeft.current,time*1.65)
-      stepLeft.current-=step
-      dx=stepDirection.current.x*step
-      dz=stepDirection.current.z*step
-    }else if(right||forward){
-      const step=time*1.48/Math.hypot(right,forward)
-      dx=(right*Math.cos(angle)-forward*Math.sin(angle))*step
-      dz=(-right*Math.sin(angle)-forward*Math.cos(angle))*step
-    }else return
+    const right=walkInput.current.right+held('KeyD','ArrowRight')-held('KeyA','ArrowLeft')
+    const forward=walkInput.current.forward+held('KeyW','ArrowUp')-held('KeyS','ArrowDown')
+    if(!right&&!forward)return
+    const step=Math.min(dt,.05)*1.48/Math.max(1,Math.hypot(right,forward))
+    const dx=(right*Math.cos(angle)-forward*Math.sin(angle))*step
+    const dz=(-right*Math.sin(angle)-forward*Math.cos(angle))*step
     function canStand(x:number,z:number){
       if(!layout.floors.some(f=>within(f,x*1000,z*1000,12))&&!layout.openings.some(o=>o.id==='bathDoor'&&within(o,x*1000,z*1000,25)))return false
       const body:Solid={id:'viewer',label:'Камера',x:x*1000,z:z*1000,w:290,d:290,y:0,h:view.eye+90,rot:0,material:'wall'}
@@ -182,7 +158,7 @@ function WallVisibility({side,cutaway,center,children}:{side:string;cutaway:bool
   return <group ref={g}>{children}</group>
 }
 
-function SceneContent({p,walkActions,mode,view,selected,measure,points,setPoint,select}:SceneProps){
+function SceneContent({p,walkInput,mode,view,selected,measure,points,setPoint,select}:SceneProps){
   const layout=useMemo(()=>geometry(p),[p]), floorMap=useMemo(woodTexture,[])
   const [wallpaper,setWallpaper]=useState<Texture>()
   useEffect(()=>{
@@ -212,7 +188,7 @@ function SceneContent({p,walkActions,mode,view,selected,measure,points,setPoint,
     <pointLight position={[2.45,2.22,5.6]} color="#ffe0bc" intensity={evening?14:2} distance={4} decay={2}/>
     <pointLight position={[3.16,1.46,3.7]} color="#ffd5a9" intensity={evening?6:1} distance={2.3} decay={2}/>
     {mode==='orbit'?<OrbitControls makeDefault target={[1.835,.46,3.32]} enableDamping minDistance={1.6} maxDistance={21} maxPolarAngle={Math.PI*.495}/>:
-      <Walk p={p} view={view} walkActions={walkActions}/>}
+      <Walk p={p} view={view} walkInput={walkInput}/>}
     {layout.floors.map(f=><group key={f.id} onClick={event=>{event.stopPropagation();hit(event.point,null)}}>
       <Box at={[f.x,-35,f.z]} size={[f.w,70,f.d]} color={p.materials[f.id==='bath'?'tile':'floor']} texture={f.id==='bath'?undefined:floorMap} tileMeters={f.id==='bath'?undefined:1.32} roughness={.72}/>
       {(mode==='walk'||view.ceiling)&&<Box at={[f.x,f.h+20,f.z]} size={[f.w,40,f.d]} color={p.materials.ceiling}/>}

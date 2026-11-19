@@ -1,12 +1,62 @@
-import {Component,StrictMode,Suspense,lazy,useEffect,useMemo,useRef,useState,type KeyboardEvent as ReactKey,type ReactNode} from 'react'
+import {Component,StrictMode,Suspense,lazy,useEffect,useMemo,useRef,useState,type KeyboardEvent as ReactKey,type PointerEvent as ReactPointer,type ReactNode} from 'react'
 import {createRoot} from 'react-dom/client'
 import {base,decodeProject,encodeProject,diagnostics,freeWidth,geometry,letters,pointDistance,v,type Item,type Project,type Room,type Vec} from './model'
 import {useStudio} from './store'
 import {applyHallFurniture,type WardrobeChoice,type LaundryChoice} from './hall-furniture'
 import {Plan} from './plan'
-import type {CameraMode,Display,WalkAction} from './scene'
+import type {CameraMode,Display,WalkVector} from './scene'
 const Scene=lazy(()=>import('./scene').then(m=>({default:m.Scene})))
 import './style.css'
+
+function WalkJoystick({input}:{input:{current:WalkVector}}){
+  const pointer=useRef<number|null>(null)
+  const thumb=useRef<HTMLSpanElement>(null)
+
+  function reset(){
+    pointer.current=null
+    input.current={right:0,forward:0}
+    if(thumb.current)thumb.current.style.transform=''
+  }
+
+  useEffect(()=>{
+    window.addEventListener('blur',reset)
+    document.addEventListener('visibilitychange',reset)
+    return ()=>{
+      window.removeEventListener('blur',reset)
+      document.removeEventListener('visibilitychange',reset)
+      reset()
+    }
+  },[input])
+
+  function move(e:ReactPointer<HTMLDivElement>){
+    if(pointer.current!==e.pointerId)return
+    const bounds=e.currentTarget.getBoundingClientRect()
+    const radius=bounds.width*.32
+    const x=(e.clientX-bounds.left-bounds.width/2)/radius
+    const y=(e.clientY-bounds.top-bounds.height/2)/radius
+    const distance=Math.hypot(x,y)
+    const visual=Math.max(1,distance)
+    const speed=Math.max(0,(Math.min(1,distance)-.12)/.88)
+    input.current=distance?{right:x/distance*speed,forward:-y/distance*speed}:{right:0,forward:0}
+    if(thumb.current)thumb.current.style.transform='translate('+x/visual*radius+'px,'+y/visual*radius+'px)'
+  }
+
+  return <div className="walk-controls">
+    <div className="walk-joystick" role="group" aria-label="Джойстик перемещения"
+      onPointerDown={e=>{
+        if(pointer.current!==null||e.button!==0)return
+        pointer.current=e.pointerId
+        e.currentTarget.setPointerCapture(e.pointerId)
+        move(e)
+      }}
+      onPointerMove={move}
+      onPointerUp={e=>{if(pointer.current===e.pointerId)reset()}}
+      onPointerCancel={e=>{if(pointer.current===e.pointerId)reset()}}
+      onLostPointerCapture={e=>{if(pointer.current===e.pointerId)reset()}}>
+      <span ref={thumb} aria-hidden="true"/>
+    </div>
+  </div>
+}
 
 const options:Record<string,[string,number,number,number,string]>={
   wardrobe:['Шкаф',1000,1900,550,'white'],laundry:['Тумба',850,900,600,'white'],desk:['Стол',1200,750,600,'wood'],
@@ -86,8 +136,8 @@ function App(){
     const old=p.params[key]
     commit({...p,params:{...p.params,[key]:{...old,value,status:value===null?'unknown':'provisional',source:old.source.includes('правка')?old.source:'Ручная правка · '+old.source}}})
   }
-  const walkActions=useRef<WalkAction[]>([])
-  function switchMode(next:CameraMode){walkActions.current=[];setMode(next);setPoints([]);if(next==='walk')setMeasure(false)}
+  const walkInput=useRef<WalkVector>({right:0,forward:0})
+  function switchMode(next:CameraMode){walkInput.current={right:0,forward:0};setMode(next);setPoints([]);if(next==='walk')setMeasure(false)}
   function duplicate(o:Item){
     const id=crypto.randomUUID()
     const copy={...o,id,label:o.label+' · копия',x:o.x-100,z:o.z+100,parent:undefined,kitchen:false}
@@ -187,20 +237,11 @@ function App(){
       <section className={'viewport '+mode} aria-label="Рабочая область">
         <div className="view-tag"><span>{groups[mode]}</span><small>{p.name}</small></div>
         {mode==='plan'?<Plan p={p} view={view} selected={selected} measure={measure} points={points} setPoint={setPoint} select={select} update={update} svg={el=>{svg.current=el}}/>:
-          <SceneError key={mode}><Suspense fallback={<div className="scene-message">Загрузка 3D…</div>}><Scene p={p} walkActions={walkActions} mode={mode} view={view} selected={selected} measure={measure} points={points} setPoint={setPoint} select={select} canvas={el=>{canvas.current=el}}/></Suspense></SceneError>}
-        {mode==='walk'&&<div className="walk-controls" aria-label="Управление прогулкой" role="group">
-          <div className="walk-move">
-            {([['forward','↑','Шаг вперёд'],['left','←','Шаг влево'],['back','↓','Шаг назад'],['right','→','Шаг вправо']] as const).map(([action,icon,label])=>
-              <button key={action} className={action} aria-label={label} title={label} onClick={()=>{if(walkActions.current.length<3)walkActions.current.push(action)}}>{icon}</button>)}
-          </div>
-          <div className="walk-turn">
-            {([['turnLeft','↶','Повернуть налево'],['turnRight','↷','Повернуть направо']] as const).map(([action,icon,label])=>
-              <button key={action} aria-label={label} title={label} onClick={()=>{if(walkActions.current.length<3)walkActions.current.push(action)}}>{icon}</button>)}
-          </div>
-        </div>}
+          <SceneError key={mode}><Suspense fallback={<div className="scene-message">Загрузка 3D…</div>}><Scene p={p} walkInput={walkInput} mode={mode} view={view} selected={selected} measure={measure} points={points} setPoint={setPoint} select={select} canvas={el=>{canvas.current=el}}/></Suspense></SceneError>}
+        {mode==='walk'&&<WalkJoystick input={walkInput}/>}
         <div className="view-help">
           {measure?(points.length===2?Math.round(pointDistance(points[0],points[1]))+' мм · нажмите для нового замера':points.length?'Укажите вторую точку':'Укажите первую точку'):
-            mode==='plan'?'Перетащите предмет, чтобы изменить его положение':mode==='walk'?'Стрелки — шаг · ведите пальцем по сцене для обзора':'Перетащите сцену для вращения · колесо для масштаба'}
+            mode==='plan'?'Перетащите предмет, чтобы изменить его положение':mode==='walk'?'Джойстик — движение · проведите по сцене для обзора':'Перетащите сцену для вращения · колесо для масштаба'}
         </div>
       </section>
       <aside className="inspector">

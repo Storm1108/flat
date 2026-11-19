@@ -98,6 +98,20 @@ export function ObjectModel({o,p,selected,onSelect}:{o:Item;p:Project;selected:b
       </>
       break
     }
+    case 'bench':
+      content=<>{box(w-12,34,d-16,0,h-65,0,wood,4)}
+        {box(w,52,d,0,h-26,0,finish,12)}
+        {[-1,1].flatMap(x=>[-1,1].map(z=><group key={x+':'+z}>
+          {box(26,h-78,26,x*(w/2-30),(h-78)/2,z*(d/2-32),black,3)}
+        </group>))}</>
+      break
+    case 'coatHooks':
+      content=<>{box(w,h,20,0,h/2,-d/2+10,wood,5)}
+        {[-1,0,1].map(i=><group key={i}>
+          {box(13,13,d-18,i*w*.29,h*.48,8,black,3)}
+          {box(13,32,14,i*w*.29,h*.48+10,d/2-7,black,3)}
+        </group>)}</>
+      break
     case 'wardrobe': {
       if(o.doors===3){
         const leaf=w/3

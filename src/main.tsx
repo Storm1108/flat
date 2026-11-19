@@ -286,7 +286,7 @@ function App(){
         <div className="modal-columns">
           <label className="stack">От колонны · шкаф под стиральную машину
             <select value={hallLaundry} onChange={e=>setHallLaundry(e.target.value as LaundryChoice)}>
-              <option value="tall">Высокий закрытый · 65 × 200 × 70 см</option><option value="low">Низкий · 65 × 90 × 50 см</option>
+              <option value="tall">Высокий закрытый · 65 × 200 × 70 см</option><option value="low">Низкий · 65 × 90 × 60 см</option>
             </select>
           </label>
           <label className="stack">Дальше к входу · платяной шкаф

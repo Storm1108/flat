@@ -5,7 +5,7 @@ import type {Display} from './scene'
 
 type Props={p:Project;view:Display;selected:string|null;measure:boolean;points:Vec[];setPoint:(v:Vec)=>void;select:(id:string|null)=>void;update:(id:string,patch:Partial<Item>)=>void;svg:(el:SVGSVGElement|null)=>void}
 const colors:Record<string,string>={bed:'#e6daca',sofa:'#b9c9c1',wardrobe:'#e0e6d6',desk:'#d7e4d8',chair:'#cddbd6',rack:'#dce7d8',oval:'#ead7b9',fridge:'#f9f9f5',washer:'#e0e2dc',laundry:'#e0e6d6',laundryTall:'#e0e6d6',cabinet:'#eadcc8',drawers:'#eadcc8',ovenCab:'#eadcc8',hob:'#434a4a',sink:'#bbc6c4'}
-const labels:Record<string,string>={bed:'Кровать',wardrobe:'Шкаф',sofa:'Диван',table:'Стол',desk:'Рабочее место',rack:'Пенал',hallwardrobe:'Шкаф',laundry:'Стиральная машина',fridge:'Холодильник',sinkCab:'Мойка',dishCab:'ПММ',ovenCab:'Духовка',drawers:'Ящики'}
+const labels:Record<string,string>={bed:'Кровать',wardrobe:'Шкаф',sofa:'Диван',table:'Стол',desk:'Рабочее место',rack:'Пенал',hallwardrobe:'Шкаф',laundry:'Стиральная машина',hallBench:'Банкетка',fridge:'Холодильник',sinkCab:'Мойка',dishCab:'ПММ',ovenCab:'Духовка',drawers:'Ящики'}
 const ink='#263e38', accent='#13765f'
 function Dimension({x1,z1,x2,z2,title}:{x1:number;z1:number;x2:number;z2:number;title:string}){
   const vertical=x1===x2

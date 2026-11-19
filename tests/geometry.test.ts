@@ -32,7 +32,7 @@ test('Стыки наружных стен и перекрытие над окн
   close(shell('bath-north').z+shell('bath-north').d/2,floor('bath').z-floor('bath').d/2)
 })
 test('Мебель и подтверждённые внешние габариты техники',()=>{
-  for(const [id,dims] of Object.entries({hallwardrobe:[802,2216,509],laundry:[650,900,500],bed:[1400,860,2000],
+  for(const [id,dims] of Object.entries({hallwardrobe:[802,2216,509],laundry:[650,900,600],bed:[1400,860,2000],
     fridge:[595,2000,675],oven:[448,595,550],micro:[450,300,315],hood:[450,175,305]})){
     const {w,h,d}=item(id);assert.deepEqual([w,h,d],dims)
   }
